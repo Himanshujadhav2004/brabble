@@ -31,7 +31,7 @@ function Footerdemo() {
       <div className="container mx-auto px-4 py-12 md:px-6 lg:px-28">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="relative">
-            <h2 className="mb-4 text-3xl font-bold tracking-tight">Stay Connected</h2>
+            <h2 className="mb-4 text-2xl font-bold tracking-tight">Stay Connected</h2>
             <p className="mb-6 text-muted-foreground">
               Join our newsletter for the latest updates and exclusive offers.
             </p>
@@ -65,14 +65,18 @@ function Footerdemo() {
             </nav>
           </div>
           <div>
-            <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
-            <address className="space-y-2 text-sm not-italic">
-              <p>123 Innovation Street</p>
-              <p>Tech City, TC 12345</p>
-              <p>Phone: (123) 456-7890</p>
-              <p>Email: hello@example.com</p>
-            </address>
-          </div>
+  <h3 className="mb-4 text-lg font-semibold">Contact Us</h3>
+  <address className="space-y-2 not-italic">
+    <p className="text-sm">NODENCEX ENTERPRISES PRIVATE LIMITED</p>
+    <p className="text-sm">
+      SHP NO - 4123, 2ND FLR, LAXMI SINGH COMPLEX, Goregaon (Mumbai), Goregaon West, Mumbai- 400104,
+      Maharashtra
+    </p>
+    <p className="text-sm">Phone: +91 9461336676</p>
+    <p className="text-sm">Email: Conact@nodence.com</p>
+  </address>
+</div>
+
           <div className="relative">
             <h3 className="mb-4 text-lg font-semibold">Follow Us</h3>
             <div className="mb-6 flex space-x-4">
