@@ -73,7 +73,7 @@ function Footerdemo() {
       Maharashtra
     </p>
     <p className="text-sm">Phone: +91 9461336676</p>
-    <p className="text-sm">Email: Conact@nodence.com</p>
+    <p className="text-sm">Email: contact@nodence.com</p>
   </address>
 </div>
 

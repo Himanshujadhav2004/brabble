@@ -23,7 +23,7 @@ const features = [
   {
     // Icon: FileTextIcon,
     name: "Lowest Latency",
-    description: "Enjoy smooth and instant interactions with our ultra-low latency AI technology.",
+    description: "Experience ultra-low latency AI technology for seamless, real-time interactions. Enjoy instant responses, minimal delays, and smooth performance in voice communication, automation, and virtual assistance. Enhance efficiency, engagement, and user experience with lightning-fast AI designed for intelligent and uninterrupted interactions across various applications.",
     href: "/",
  
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
@@ -32,7 +32,7 @@ const features = [
   {
     // Icon: InputIcon,
     name: "AI-Powered Call Assistant",
-    description: "Create intelligent AI assistants that handle phone calls with human-like conversation.",
+    description: "Build intelligent AI assistants that manage phone calls with natural, human-like conversations. Automate customer interactions, answer queries, schedule appointments, and provide support effortlessly. Enhance communication, improve efficiency, and deliver a seamless calling experience with advanced AI-powered voice technology for your business..",
     href: "/",
  
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
@@ -60,7 +60,7 @@ const features = [
     // Icon: BellIcon,
     name: "Notifications",
     description:
-      "Get notified when someone shares a file or mentions you in a comment.",
+      "Receive instant notifications when your AI call agent answers a call, schedules an appointment, or needs your input. Stay informed about customer interactions, missed calls, and follow-ups in real time, ensuring seamless communication and improved responsiveness for your business." ,
     href: "/",
  
     background: <img className="absolute -right-20 -top-20 opacity-60" />,
@@ -76,29 +76,21 @@ function LandingPage() {
 const testimonials = [
     {
       author: {
-        name: "Emma Thompson",
-        handle: "@emmaai",
-        avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=face"
+        name: "Mr. Bhagat Agarwal",
+        handle: "CEO, MB Jewels",
+        avatar: "/assets/MB.jpg"
       },
-      text: "Using this AI platform has transformed how we handle data analysis. The speed and accuracy are unprecedented.",
-      href: "https://twitter.com/emmaai"
+      text: "Brabble.ai is a revolutionary product that India truly needs, transforming how businesses engage with their audience. We look forward to leveraging its potential to enhance customer outreach and drive innovation in the jewelry industry.",
+      href: "https://www.mbjewels.in/"
     },
     {
       author: {
-        name: "David Park",
-        handle: "@davidtech",
-        avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face"
+        name: "Mr. Razi Khan",
+        handle: "CEO, ARK Tourism",
+        avatar: "/assets/ARK.jpg"
       },
-      text: "The API integration is flawless. We've reduced our development time by 60% since implementing this solution.",
+      text: "I remember Shreyansh sharing his idea with me while working as a consultant, and we discussed the challenges of workforce shortages in the tourism industry. I really liked the concept behind Brabble.ai, and after testing the product, I see its immense potential..",
       href: "https://twitter.com/davidtech"
-    },
-    {
-      author: {
-        name: "Sofia Rodriguez",
-        handle: "@sofiaml",
-        avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop&crop=face"
-      },
-      text: "Finally, an AI tool that actually understands context! The accuracy in natural language processing is impressive."
     }
   ]
 
@@ -195,6 +187,7 @@ const testimonials = [
       <div className="py-10 px-6 sm:px-10 md:px-16 lg:px-20 dark:bg-background">
   <h1 className="font-bold text-center text-2xl sm:text-3xl md:text-4xl dark:text-purple-600 text-black">AI-Powered Communication Mastery</h1>
   <p className="max-w-[90%] md:max-w-2xl lg:max-w-4xl mt-3 mx-auto text-center text-gray-600 md:text-gray-700 text-sm sm:text-base mb-10 dark:text-white">Seamless Connectivity, Uninterrupted Communication</p>
+
 <BentoGrid className="lg:grid-rows-3">
       {features.map((feature) => (
         <BentoCard  key={feature.name} {...feature} />
