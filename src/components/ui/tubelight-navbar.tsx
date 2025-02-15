@@ -1,13 +1,13 @@
 "use client";
 
-import React, {useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { LucideIcon, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
-import  {Moon, Sun } from "lucide-react"
-import { Label } from "@/components/ui/label"
-import { Switch } from "@/components/ui/switch"
+import { Moon, Sun } from "lucide-react";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 interface NavItem {
   name: string;
@@ -24,14 +24,18 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const [activeTab, setActiveTab] = useState(items[0]?.name || "");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  const [isDarkMode, setIsDarkMode] = React.useState(() => {
-    // Load the theme from localStorage, default to false (light mode)
-    return localStorage.getItem("theme") === "dark";
-  });
-  
-  React.useEffect(() => {
-  
+  // Run on client side only
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+      document.documentElement.classList.add("dark");
+      setIsDarkMode(true);
+    }
+  }, []);
+
+  useEffect(() => {
     if (isDarkMode) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
@@ -40,24 +44,6 @@ export function NavBar({ items, className }: NavBarProps) {
       localStorage.setItem("theme", "light");
     }
   }, [isDarkMode]);
-  
-  // const toggleDarkMode = () => {
-  //   setIsDarkMode(prevMode => !prevMode);
-  // };
-  
-  // useEffect(() => {
-  //   const handleScroll = () => setIsScrolled(window.scrollY > 50);
-  //   const handleResize = () => {
-  //     if (window.innerWidth >= 768) setIsMobileMenuOpen(false);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   window.addEventListener("resize", handleResize);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //     window.removeEventListener("resize", handleResize);
-  //   };
-  // }, []);
 
   return (
     <nav
@@ -71,11 +57,11 @@ export function NavBar({ items, className }: NavBarProps) {
       <div className="container mx-auto flex justify-between items-center px-6 py-2">
         {/* Logo */}
         <Link href="/" className="hover:opacity-80 transition-opacity">
-          <Image 
-            src="/assets/logo.png" 
-            alt="Logo" 
-            width={120} 
-            height={90} 
+          <Image
+            src="/assets/logo.png"
+            alt="Logo"
+            width={120}
+            height={90}
             className="h-[50px] w-auto"
           />
         </Link>
@@ -102,18 +88,18 @@ export function NavBar({ items, className }: NavBarProps) {
               </Link>
             );
           })}
-                <div className="flex items-center space-x-2">
-              <Sun className="h-4 w-4" />
-              <Switch
-                id="dark-mode"
-                checked={isDarkMode}
-                onCheckedChange={setIsDarkMode}
-              />
-              <Moon className="h-4 w-4" />
-              <Label htmlFor="dark-mode" className="sr-only">
-                Toggle dark mode
-              </Label>
-            </div>
+          <div className="flex items-center space-x-2">
+            <Sun className="h-4 w-4" />
+            <Switch
+              id="dark-mode"
+              checked={isDarkMode}
+              onCheckedChange={setIsDarkMode}
+            />
+            <Moon className="h-4 w-4" />
+            <Label htmlFor="dark-mode" className="sr-only">
+              Toggle dark mode
+            </Label>
+          </div>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -153,10 +139,9 @@ export function NavBar({ items, className }: NavBarProps) {
                   <Icon size={20} strokeWidth={2} />
                   <span className="font-medium">{item.name}</span>
                 </Link>
-                
               );
             })}
-                 <div className="flex items-center ml-[17px] mt-3 space-x-2">
+            <div className="flex items-center ml-[17px] mt-3 space-x-2">
               <Sun className="h-4 w-4" />
               <Switch
                 id="dark-mode"
