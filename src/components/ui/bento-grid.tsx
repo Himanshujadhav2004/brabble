@@ -42,7 +42,7 @@ const BentoGrid = ({ children, className }: { children: ReactNode; className?: s
   );
 };
 
-const BentoCard = ({ name, className, description, href }: { name: string; className?: string; description: string; href: string }) => (
+const BentoCard = ({ name, className, description }: { name: string; className?: string; description: string; href: string }) => (
   <div
     className={cn(
       "relative flex flex-col justify-between p-6 overflow-hidden rounded-xl bg-white shadow-md transition-all duration-300 hover:scale-105 dark:bg-background border",
